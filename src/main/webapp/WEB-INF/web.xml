@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://Java.sun.com/xml/ns/j2ee" xmlns:web="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd" id="WebApp_ID" version="2.4">
+  <display-name>FirstServlet</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>HelloWorldServlets</display-name>
+    <servlet-name>HelloWorldServlets</servlet-name>
+    <servlet-class>org.upec.servlets.HelloWorldServlets</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HelloWorldServlets</servlet-name>
+    <url-pattern>/HelloWorldServlets</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ProfesseurServlet</display-name>
+    <servlet-name>ProfesseurServlet</servlet-name>
+    <servlet-class>org.upec.servlets.ProfesseurServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ProfesseurServlet</servlet-name>
+    <url-pattern>/ProfesseurServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ModuleServlet</display-name>
+    <servlet-name>ModuleServlet</servlet-name>
+    <servlet-class>org.upec.servlets.ModuleServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ModuleServlet</servlet-name>
+    <url-pattern>/ModuleServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+		<servlet-name>Jersey Web Application</servlet-name>
+		<servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+		
+		<init-param> 
+         <param-name>jersey.config.server.provider.packages</param-name> 
+         <param-value>org.upec.restapi</param-value> 
+        </init-param> 
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Jersey Web Application</servlet-name>
+		<url-pattern>/rest/*</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+    <display-name>Apache-Axis Servlet</display-name>
+    <servlet-name>AxisServlet</servlet-name>
+    <servlet-class>org.apache.axis2.transport.http.AxisServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AxisServlet</servlet-name>
+    <url-pattern>/servlet/AxisServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AxisServlet</servlet-name>
+    <url-pattern>*.jws</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AxisServlet</servlet-name>
+    <url-pattern>/services/*</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <display-name>Apache-Axis Admin Servlet Web Admin</display-name>
+    <servlet-name>AxisAdminServlet</servlet-name>
+    <servlet-class>org.apache.axis2.transport.http.AxisAdminServlet</servlet-class>
+    <load-on-startup>100</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AxisAdminServlet</servlet-name>
+    <url-pattern>/axis2-admin/*</url-pattern>
+  </servlet-mapping>
+  
+</web-app>
